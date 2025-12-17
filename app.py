@@ -20,6 +20,7 @@ cache = Cache(app)
 #@cache.cached(timeout=60) 
 #memoization is a special type of caching. Now, you can pass parameters and still use cache.
 #Memoization creates an extra entry in the redis db for quick lookup. In this case, there will be three enteries: 2 for "/" and "/abc," and 1 more for memo table. 
+#If you use memoization but without parameters, it will work the same as cache.cached. 
 @cache.memoize(timeout=60)
 def database_call(id):
     sleep(5)
