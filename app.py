@@ -41,6 +41,8 @@ def abc():
 def delete():
     cache.delete("common") #deletes specified key.
     cache.clear() #clears everything. 
+    cache.delete_memoized(database_call) #deletes all caches that exit for this function.
+    cache.delete_memoized(database_call, 1) #deletes only the cache that exits for parameter 1. 
     return "Cache cleared!"
 
 if __name__ == "__main__":
